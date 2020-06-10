@@ -1,0 +1,8 @@
+[Unit]
+[Service]
+WorkingDirectory=/locust
+ExecStart=/usr/local/bin/locust -f /locust/tasks.py --slave --master-host=<master_ip>
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
