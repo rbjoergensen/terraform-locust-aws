@@ -8,7 +8,7 @@ This project needs
 - tokens.csv in scripts folder containing tokens for authentication
 
 Target Urls
-- https://api.cotv.dk
+- https://callofthevoid.dk
 
 ##### Initialize with keys for S3 backend
     terraform init \
