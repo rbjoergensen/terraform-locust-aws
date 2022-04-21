@@ -1,11 +1,8 @@
-### Provider ##########################################################
 provider "aws" {
   region   = "eu-central-1"
   version  = "2.48.0"
-  access_key = var.access_key
-  secret_key = var.secret_key
 }
-### Variables #########################################################
+
 variable "access_key" {}
 variable "secret_key" {}
 variable "master_ip" {}
@@ -21,18 +18,20 @@ variable "instance_type" {}
 variable "volume_type" {}
 variable "volume_size" {}
 variable "tags" {}
-### Data ##############################################################
+
 data "aws_vpc" "cotv-infrastructure-frankfurt" {
   id = var.vpc_id
 }
+
 data "aws_subnet" "private-subnet-1" {
   id = var.subnet_id
 }
-### Resources #########################################################
+
 resource "aws_key_pair" "terraform-keypair" {
   key_name   = var.key_name
   public_key = var.key_value
 }
+
 resource "aws_security_group" "security_group" {
   name        = var.sg_name
   description = var.sg_description
@@ -62,7 +61,7 @@ resource "aws_security_group" "security_group" {
     Department  = var.tags[3]
   }
 }
-### Instances ########################################################
+
 resource "aws_instance" "master" {
   ami             = var.ami_id
   instance_type   = var.instance_type
@@ -108,6 +107,7 @@ resource "aws_instance" "master" {
     Department  = var.tags[3]
   }
 }
+
 resource "aws_instance" "worker" {
   count           = var.worker_count
   ami             = var.ami_id
