@@ -1,5 +1,3 @@
-access_key     = ""
-secret_key     = ""
 master_ip      = "192.168.2.100"
 vpc_id         = "vpc-0000000000000000"
 subnet_id      = "subnet-0000000000000000"
