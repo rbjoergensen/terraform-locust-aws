@@ -1,24 +1,3 @@
-provider "aws" {
-  region   = "eu-central-1"
-  version  = "2.48.0"
-}
-
-variable "access_key" {}
-variable "secret_key" {}
-variable "master_ip" {}
-variable "vpc_id" {}
-variable "subnet_id" {}
-variable "key_name" {}
-variable "key_value" {}
-variable "sg_name" {}
-variable "sg_description" {}
-variable "worker_count" {}
-variable "ami_id" {}
-variable "instance_type" {}
-variable "volume_type" {}
-variable "volume_size" {}
-variable "tags" {}
-
 data "aws_vpc" "cotv-infrastructure-frankfurt" {
   id = var.vpc_id
 }
