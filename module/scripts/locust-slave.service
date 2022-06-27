@@ -1,7 +1,7 @@
 [Unit]
 [Service]
 WorkingDirectory=/locust
-ExecStart=/usr/local/bin/locust -f /locust/tasks.py --master
+ExecStart=/usr/local/bin/locust -f /locust/locust.py --slave --master-host=<master_ip>
 Restart=always
 RestartSec=10
 [Install]
